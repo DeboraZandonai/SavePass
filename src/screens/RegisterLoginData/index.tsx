@@ -60,7 +60,7 @@ export function RegisterLoginData() {
     ];
     await AsyncStorage.setItem(
       dataKey, 
-      JSON.stringify(newLoginData)
+      JSON.stringify(newLoginListData)
     );
     navigate('Home')
   }
@@ -87,7 +87,7 @@ export function RegisterLoginData() {
             testID="email-input"
             title="E-mail"
             name="email"
-            error={errors.email && errors.service_name.message}
+            error={errors.email && errors.email.message}
             control={control}
             autoCorrect={false}
             autoCapitalize="none"
@@ -97,7 +97,7 @@ export function RegisterLoginData() {
             testID="password-input"
             title="Senha"
             name="password"
-            error={errors.password && errors.service_name.message}
+            error={errors.password && errors.password.message}
             control={control}
             secureTextEntry
           />
